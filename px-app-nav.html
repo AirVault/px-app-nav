@@ -451,8 +451,15 @@ Custom property | Description
 
             <!-- Stamp plain old items, which hold children -->
             <template is="dom-if" if="[[_isItemNotParent(item, keys.children)}}">
-              <px-app-nav-item item="[[item]]" label="[[_getItemProp(item, keys.label)]]" icon="[[_getItemProp(item, keys.icon)]]" selected$="[[_isItemSelected(item, selectedMeta.item)]]"></px-app-nav-item>
+              <px-app-nav-item item="[[item]]" label="[[_getItemProp(item, keys.label)]]" 
+                icon="[[_getItemProp(item, keys.icon)]]" selected$="[[_isItemSelected(item, selectedMeta.item)]]"></px-app-nav-item>
             </template>
+
+            <!--Simple Separator-->
+            <template is="dom-if" if="{{_itemIsSeparator(item)}}">
+              <div class="app-nav-item__separator"></div>
+            </template>
+
           </template>
         </template>
 

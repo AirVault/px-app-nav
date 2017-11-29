@@ -784,7 +784,20 @@
      * @return {Boolean}
      */
     _isItemNotParent(item, childrenKey) {
-      return !item.hasOwnProperty(childrenKey) || !Array.isArray(item[childrenKey]) || item[childrenKey].length === 0;
+      return (!item.hasOwnProperty(childrenKey) || !Array.isArray(item[childrenKey]) || item[childrenKey].length === 0) && (item.label !== '' && item.icon !== '');
+    },
+
+    /**
+     * Checks if label and icon property are empty, if so, it means that
+     * this is a separator
+     * @param {*} item
+     * @param {String} icon 
+     */
+    _itemIsSeparator(item) {
+      if (!((typeof item) === 'undefined'))
+        return item.label === '_separator_' && item.icon === '';
+
+      return false;
     },
 
     /**

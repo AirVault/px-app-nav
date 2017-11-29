@@ -83,3 +83,9 @@ $px-app-nav-vertical-transition: var(--px-app-nav-vertical-transition, max-width
   flex-direction: column;
   height: 100%;
 }
+
+.app-nav-item__separator {
+  border-color: $gray6;
+  border-style: solid; 
+  border-width: 2px; 
+}
